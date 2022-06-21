@@ -16,6 +16,7 @@ namespace Methods
             //result += 2;
 
             //Console.WriteLine(result);
+            //diqqetli olun
             #endregion
 
             #region Check Number Type
