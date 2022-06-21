@@ -7,173 +7,100 @@ namespace Methods
         static void Main(string[] args)
         {
 
+            #region Sum of odd numbers from array
+            //int[] arr = { 1, 4, 5, 7, 8, 9, 10 };
 
 
-            //string[] names = { "Orxan", "Emil", "Seid", "Cavidan" };
-            //bool isStudent = true;
-            //StudentNames(names, isStudent);
+            //var result = SumOfOddNums(arr);
 
-            //Sum(6, 8);
+            //result += 2;
 
+            //Console.WriteLine(result);
+            #endregion
 
-            //var sum = SumAges(33,23);
-
-            //sum += 10;
-
-            //Console.WriteLine(sum);
-
-            //string name = "Orxan";
-            //string surname = "Akbarov";
-            //int age = 26;
-
-            //string fullName = FullName(name, surname,age);
-
-            //Console.WriteLine(fullName);
-
-            //int[] ages = { 33, 44, 57, 88, 104, 18 };
-
-            //foreach (int item in ages)
-            //{
-            //    if (IsOld(item))
-            //    {
-            //        Console.WriteLine("Old");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Young");
-            //    }
-
-
-            //}
-
-
-
-            //Test1("sadasdas");
-            //Test1(55);
-            //Test1(true);
-
-            //SumNums(6,5,1);
-
-            SumNumbers(3, 10);
-
-            var result = Sum(4, 18);
-
-            Console.WriteLine(result + 6);
+            #region Check Number Type
+            CheckNumberType(1);
+            #endregion
 
 
         }
 
 
-       
-        static void SumNumbers(int n, int m)
+        #region Check Number Type
+        static void CheckNumberType(int num)
         {
-            int sum = 0;
+            int count = 0;
 
-            for (int i = n; i <= m; i++)
+            if (num <= 1)
             {
-                if(i%2 == 1)
-                {
-                    sum += i;
-                }
+                Console.WriteLine("Please add correct number");
+                return;
             }
 
 
-            Console.WriteLine(sum);
-        }
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                {
+                    count++;
+                }
+            }
 
-        
-        static int Sum(int n, int m)
+            if (count > 2)
+            {
+                Console.WriteLine("Composite");
+            }
+            else
+            {
+                Console.WriteLine("Primary");
+            }
+
+
+
+
+
+        }
+        #endregion
+
+
+
+        #region Sum of odd numbers from array
+        static int SumOfOddNums(int[] numbers)
         {
             int sum = 0;
 
-            for (int i = n; i <= m; i++)
+            //foreach (var item in numbers)
+            //{
+            //    if(IsOdd(item))
+            //    {
+            //        sum += item;
+            //    }
+            //}
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                if (i % 2 == 1)
+                if (IsOdd(numbers[i]))
                 {
-                    sum += i;
+                    sum += numbers[i];
                 }
             }
 
             return sum;
 
-            
         }
 
 
-        //static void SumNums(int m, int n = 5, int t = 88)
-        //{
-        //    Console.WriteLine(m+n+t);
-        //}
+        static bool IsOdd(int num)
+        {
+            if (num % 2 == 1)
+                return true;
+
+            return false;
+        }
+        #endregion
 
 
 
-        //static void Test1(bool isMarried)
-        //{
-        //    Console.WriteLine("Evlidir");
-        //}
-
-        //static void Test1(int num1)
-        //{
-        //    Console.WriteLine("Reqemdir");
-        //}
-
-        //static void Test1(string isMarried)
-        //{
-        //    Console.WriteLine("Duzgundur");
-        //}
-
-        //static string FullName(string name, string surname, int age)
-        //{
-        //    //return name + " " + surname;
-
-        //    var result = $"Fullname:  {name} {surname} - Age: {age}";
-
-        //    return result;
-        //}
-
-        //static bool IsOld(int age)
-        //{
-        //    if (age > 45)
-        //    {
-        //        return true;
-        //    }
-
-        //    return false;
-
-        //}
-
-        //static bool IsOld(int age) => age > 45 ? true : false;
-
-
-
-
-        //static void Sum(int m, int n)
-        //{
-        //    var sum = m + n;
-        //    Console.WriteLine(sum);
-        //}
-
-        //static void StudentNames(string[] names, bool isStudent)
-        //{
-        //    for (int i = 0; i < names.Length; i++)
-        //    {
-        //        if (isStudent)
-        //        {
-        //            Console.WriteLine(i + "-" + names[i]);
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Not student");
-        //        }
-
-        //    }
-
-        //}
-
-        //static int SumAges(int age1, int age2)
-        //{
-        //    return age1 + age2;
-        //}
 
 
 
